@@ -104,7 +104,7 @@ export const PgConnectionArgFilterLogicalOperatorsPlugin: GraphileConfig.Plugin 
                       const value = fieldArgs.getRaw().eval();
                       for (const key in value) {
                         if (value[key] !== undefined) {
-                          fieldArgs.apply($and);
+                          fieldArgs.apply($and, [key]);
                         }
                       }
                     },
